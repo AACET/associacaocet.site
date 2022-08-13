@@ -68,7 +68,7 @@ ul li {
     padding: 25px;
     font-size: 1.3rem;
     z-index: var(--index);
-    transition: 0.25s;
+    transition: 0.5s;
 }
 /*
 ul li::before {
@@ -81,7 +81,7 @@ ul li::before {
     background-color: var(--primary_side);
     transform-origin: right;
     transform: skewY(45deg);
-    transition: 0.25s;  
+    transition: 0.5s;  
 }
 
  .hoverable:hover::before {
@@ -94,7 +94,8 @@ ul li::before {
 
 .hoverable:hover {
     background: var(--secondary);
-    transform: translateX(50px);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 /*
 ul li::after {
@@ -107,7 +108,7 @@ ul li::after {
     background: var(--primary_top);
     transform-origin: bottom;
     transform: skewX(45deg);
-    transition: 0.25s;
+    transition: 0.5s;
 }
 */
 
