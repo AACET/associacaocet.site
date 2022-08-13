@@ -57,19 +57,20 @@ body {
 
 ul {
     position: relative;
-    transform: skewY(-5deg);
+    transform: skewY(0deg);
 }
 
 ul li {
     position: relative;
     list-style: none;
-    width: 200px;
+    width: 300px;
     background: var(--primary);
-    padding: 15px;
+    padding: 25px;
+    font-size: 1.3rem;
     z-index: var(--index);
     transition: 0.25s;
 }
-
+/*
 ul li::before {
     content: '';
     position: absolute;
@@ -83,19 +84,19 @@ ul li::before {
     transition: 0.25s;  
 }
 
-.hoverable:hover::before {
+ .hoverable:hover::before {
     background-color: var(--secondary);
 }
 
 .hoverable:hover::after {
     background-color: var(--secondary);
-}
+} */
 
 .hoverable:hover {
     background: var(--secondary);
     transform: translateX(50px);
 }
-
+/*
 ul li::after {
     content: '';
     position: absolute;
@@ -108,6 +109,7 @@ ul li::after {
     transform: skewX(45deg);
     transition: 0.25s;
 }
+*/
 
 ul li a {
     text-decoration: none;
