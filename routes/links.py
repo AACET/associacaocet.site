@@ -11,14 +11,15 @@ logger = logging.getLogger(__name__)
 def links(event: EventCall, host, path, request, response: Response, server):
     filename = os.path.basename(path)
 
-    path = re.sub("[.]{2}|[~%]", "", path)
-    path = os.path.join("assets/links/", path)
+    path = re.sub("[.]{2}|[~%]", "", path.removeprefix("/"))
+    path = os.path.join("assets", "links", path)
 
     while os.path.exists(path):
         if os.path.isdir(path):
             path = os.path.join(path, "index.html")
             
         elif os.path.isfile(path):
+            logger.info(f"Serving [{path}]")
             response.send_file(path)         
             return event.stop()
 
