@@ -92,7 +92,7 @@ ul li::before {
     background-color: var(--secondary);
 } */
 
-.hoverable:hover {
+.hoverable:hover, .hoverable:active{
     background: var(--secondary);
     margin-top: 1rem;
     margin-bottom: 1rem;
