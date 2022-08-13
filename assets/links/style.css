@@ -15,7 +15,7 @@ body {
     padding: 0;
     color: var(--secondary);
   }
-  
+    /* Thanks to https://stackoverflow.com/questions/37903824/how-can-i-make-infinite-flowing-background-with-only-css */  
   #animatedBackground {
     width: 100%;
     height: 100%;
