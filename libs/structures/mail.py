@@ -5,6 +5,10 @@ from .. import config
 
 
 class MailHandler:
+    async def handle_RCPT(self, server, session, envelope, address, rcpt_options):
+        envelope.rcpt_tos.append(address)
+        return '250 OK'
+
     async def handle_DATA(self, server, session, envelope):
         print('Message from %s' % envelope.mail_from)
         print('Message for %s' % envelope.rcpt_tos)
