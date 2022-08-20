@@ -17,7 +17,7 @@ def start_mail_server():
 
 def send_email(sender, recipient: list[str], message):
     logger.info(f"[SMTPS] Sending email to {recipient} from {sender}.")
-    client = Client("associacaocet.site", 25)
-    client.starttls(context=ssl.create_default_context())
+    client = Client("0.0.0.0", 25)
+    client.starttls()
     r = client.sendmail(sender, recipient, message)
     return r
