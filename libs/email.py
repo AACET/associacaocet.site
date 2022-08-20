@@ -1,5 +1,5 @@
 import logging
-from structures import MailHandler
+from .structures import MailHandler
 from aiosmtpd.controller import Controller
 from smtplib import SMTP as Client
 import ssl
