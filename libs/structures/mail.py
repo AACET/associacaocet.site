@@ -1,13 +1,14 @@
 from aiosmtpd.smtp import SMTP
 from aiosmtpd.controller import Controller
+from aiosmtpd.handlers import Proxy
 import ssl
 from .. import config
 
 
-class MailHandler:
+class MailHandler(Proxy):
     async def handle_RCPT(self, server, session, envelope, address, rcpt_options):
         envelope.rcpt_tos.append(address)
-        return '250 OK'
+        return super().handle_RCPT(server, session, envelope, address, rcpt_options)
 
     async def handle_DATA(self, server, session, envelope):
         print('Message from %s' % envelope.mail_from)
@@ -17,7 +18,7 @@ class MailHandler:
             print(f'> {ln}'.strip())
         print()
         print('End of message')
-        return '250 Message accepted for delivery'
+        return super().handle_DATA(server, session, envelope)
 
 
 class ControllerStarttls(Controller):
