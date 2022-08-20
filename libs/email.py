@@ -10,10 +10,10 @@ logger = logging.getLogger(__name__)
 
 def start_mail_server():
     logger.info("Starting SMTPS server.")
-    CONTROLLER = ControllerStarttls(MailHandler('smtp.gmail.com', 587), "0.0.0.0", 25, server_hostname='Associacao Atletica de Ciencias Exatas e Tecnologias')
-    CONTROLLER.start()
+    controller = ControllerStarttls(MailHandler('smtp.gmail.com', 587), "0.0.0.0", 25, server_hostname='Associacao Atletica de Ciencias Exatas e Tecnologias')
+    controller.start()
     
-    logger.info("SMTPS server is now running.")
+    logger.info(f"SMTPS server is now running @ {controller.hostname} {controller.port}.")
 
 def send_email(sender, recipient: list[str], message):
     logger.info(f"[SMTPS] Sending email to {recipient} from {sender}.")
