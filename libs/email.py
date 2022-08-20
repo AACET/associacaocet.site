@@ -15,6 +15,6 @@ def start_mail_server():
 
 def send_email(sender, recipient: list[str], message):
     logger.info(f"[SMTPS] Sending email to {recipient} from {sender}.")
-    client = Client(CONTROLLER.hostname, CONTROLLER.port)
+    client = Client("0.0.0.0", 25)
     r = client.sendmail(sender, recipient, message)
     return r
