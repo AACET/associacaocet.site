@@ -1,3 +1,9 @@
+from aiosmtpd.smtp import SMTP
+from aiosmtpd.controller import Controller
+import ssl
+from .. import config
+
+
 class MailHandler:
     async def handle_DATA(self, server, session, envelope):
         print('Message from %s' % envelope.mail_from)
@@ -8,3 +14,10 @@ class MailHandler:
         print()
         print('End of message')
         return '250 Message accepted for delivery'
+
+
+class ControllerStarttls(Controller):
+    def factory(self):
+        context = ssl.SSLContext(ssl.Purpose.CLIENT_AUTH)
+        context.load_cert_chain(config.get_chain_path(), config.get_private_key_path())
+        return SMTP(self.handler, require_starttls=True, tls_context=context)
