@@ -1,6 +1,6 @@
 import logging
 from .structures import MailHandler, ControllerStarttls
-from smtplib import SMTP as Client
+from smtplib import SMTPS as Client
 
 global CONTROLLER
 CONTROLLER = None
