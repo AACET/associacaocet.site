@@ -21,7 +21,6 @@ class MailHandler(Proxy):
     
     def _deliver(self, mail_from, rcpt_tos, data):
         refused = {}
-        smtplib.SMTP.
         try:
             log.info(f'Contacting {self._hostname} @ {self._port}')
             s = smtplib.SMTP(self._hostname, self._port)
