@@ -18,6 +18,6 @@ class MailHandler:
 
 class ControllerStarttls(Controller):
     def factory(self):
-        context = ssl.SSLContext(ssl.Purpose.CLIENT_AUTH)
+        context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
         context.load_cert_chain(config.get_chain_path(), config.get_private_key_path())
         return SMTP(self.handler, require_starttls=True, tls_context=context)
