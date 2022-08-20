@@ -22,9 +22,11 @@ class MailHandler(Proxy):
     def _deliver(self, mail_from, rcpt_tos, data):
         refused = {}
         try:
-            s = smtplib.SMTP(self._hostname)
-            s.connect(self._hostname, self._port)
-            s.starttls()
+            log.info(f'Contacting {self._hostname} @ {self._port}')
+            s = smtplib.SMTP(self._hostname, self._port)
+            logging.info('Contacted.')
+            tls = s.starttls()
+            logging.info(tls)
             try:
                 refused = s.sendmail(mail_from, rcpt_tos, data)
             finally:
