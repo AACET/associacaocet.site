@@ -14,7 +14,7 @@ class MailHandler(Proxy):
             print(f'> {ln}'.strip())
         print()
         print('End of message')
-        return super().handle_DATA(server, session, envelope)
+        return await super().handle_DATA(server, session, envelope)
 
 
 class ControllerStarttls(Controller):
