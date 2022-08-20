@@ -2,7 +2,6 @@ import logging
 import ssl
 from .structures import MailHandler, ControllerStarttls
 from smtplib import SMTP as Client
-from smtplib import START
 
 global CONTROLLER
 CONTROLLER = None
