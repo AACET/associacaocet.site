@@ -8,7 +8,7 @@ import logging
 
 log = logging.getLogger(__name__)
 
-class MailHandler(Proxy):
+class MailHandler:
     async def handle_DATA(self, server, session, envelope):
         print('Message from %s' % envelope.mail_from)
         print('Message for %s' % envelope.rcpt_tos)
@@ -17,34 +17,7 @@ class MailHandler(Proxy):
             print(f'> {ln}'.strip())
         print()
         print('End of message')
-        return await super().handle_DATA(server, session, envelope)
-    
-    def _deliver(self, mail_from, rcpt_tos, data):
-        refused = {}
-        try:
-            log.info(f'Contacting {self._hostname} @ {self._port}')
-            s = smtplib.SMTP(self._hostname, self._port)
-            s.set_debuglevel(1)
-            logging.info('Contacted.')
-            tls = s.starttls()
-            logging.info(tls)
-            try:
-                refused = s.sendmail(mail_from, rcpt_tos, data)
-            finally:
-                s.quit()
-        except smtplib.SMTPRecipientsRefused as e:
-            log.info('got SMTPRecipientsRefused')
-            refused = e.recipients
-        except (OSError, smtplib.SMTPException) as e:
-            log.exception('got %s', e.__class__)
-            # All recipients were refused.  If the exception had an associated
-            # error code, use it.  Otherwise, fake it with a non-triggering
-            # exception code.
-            errcode = getattr(e, 'smtp_code', -1)
-            errmsg = getattr(e, 'smtp_error', 'ignore')
-            for r in rcpt_tos:
-                refused[r] = (errcode, errmsg)
-        return refused
+        return '205 OK'
 
 class ControllerStarttls(Controller):
     def factory(self):
