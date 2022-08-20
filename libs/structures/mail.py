@@ -22,7 +22,7 @@ class MailHandler(Proxy):
     def _deliver(self, mail_from, rcpt_tos, data):
         refused = {}
         try:
-            s = smtplib.SMTP()
+            s = smtplib.SMTP(self._hostname)
             s.connect(self._hostname, self._port)
             s.starttls()
             try:
