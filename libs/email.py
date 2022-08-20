@@ -2,6 +2,7 @@ import logging
 from .structures import MailHandler, ControllerStarttls
 from smtplib import SMTP as Client
 
+global CONTROLLER
 CONTROLLER = None
 logger = logging.getLogger(__name__)
 
