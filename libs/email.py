@@ -17,7 +17,7 @@ def start_mail_server():
 
 def send_email(sender, recipient: list[str], message):
     logger.info(f"[SMTPS] Sending email to {recipient} from {sender}.")
-    client = Client('gmail-smtp-in.l.google.com', 25)
+    client = Client('alt2.gmail-smtp-in.l.google.com', 587)
     client.set_debuglevel(1)
     client.ehlo('associacaocet.site')
     client.starttls()
