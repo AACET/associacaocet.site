@@ -1,0 +1,4 @@
+{
+    "chain_path": "/etc/letsencrypt/live/associacaocet.site/fullchain.pem",
+    "private_key_path": "/etc/letsencrypt/live/associacaocet.site/privkey.pem"
+}
