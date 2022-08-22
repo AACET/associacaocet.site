@@ -1,4 +1,5 @@
 from genericpath import isfile
+import os
 from libs import email
 from pyding import on, EventCall
 from stackhttp import Request, Response, HTTP
@@ -12,7 +13,9 @@ def links(event: EventCall, host, path, request: Request, response: Response, se
     match request.method, path.removeprefix("/").split("/"):
         case 'POST', ["mail", "test"]:
             logger.info("Sending email")
-            email.send_email('do_not_reply@associacaocet.site', 'bernarditete6@gmail.com', 'Hello world from API')
+            file = open(os.path.join('assets', 'emails', 'welcome.html'), 'r')
+            email.send_email('bernarditete6@gmail.com', 'sistema@associacaocet.site', '[SISTEMA]: Email de teste de envio', file.read())
+            file.close()
             response.ok(json={'sent': True})
     
     return event.stop()
