@@ -15,10 +15,12 @@ def links(event: EventCall, host, path, request: Request, response: Response, se
     match os.path.basename(path):
         case "favicon.ico" as name:
             logging.info(f"Serving {name}")
+            response.headers['Access-Control-Allow-Origin'] = '*'
             response.not_found()
             event.stop()
 
         case name if name.endswith(".otf"):
             logging.info(f"Serving {name}")
+            response.headers['Access-Control-Allow-Origin'] = '*'
             response.ok(page=os.path.join('assets', 'fonts', name))
             event.stop()
