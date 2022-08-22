@@ -18,3 +18,7 @@ def links(event: EventCall, host, path, request: Request, response: Response, se
             response.not_found()
             event.stop()
 
+        case name if name.endswith(".otf"):
+            logging.info(f"Serving {name}")
+            response.ok(page=os.path.join('assets', name))
+            event.stop()
