@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 def start_mail_server():
     logger.info("Starting SMTPS server.")
-    controller = ControllerStarttls(MailHandler('smtp.gmail.com', 587), "0.0.0.0", 25, server_hostname='Associacao Atletica de Ciencias Exatas e Tecnologias')
+    controller = ControllerStarttls(MailHandler(), "0.0.0.0", 25, server_hostname='Associacao Atletica de Ciencias Exatas e Tecnologias')
     controller.start()
     
     logger.info(f"SMTPS server is now running @ {controller.hostname} {controller.port}.")
