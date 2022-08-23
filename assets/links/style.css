@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@font-face {
+  font-family: StretchPro;
+  src: url('https://associacaocet.site/StretchPro.otf');
+}
+
+@font-face {
+  font-family: Neutro;
+  src: url('https://associacaocet.site/Neutro-ExtraBold.otf');
+}
+
 :root {
-    --primary: #3e98b6;
+    --primary: #000;
     --primary_side: #c46e98;
     --primary_top: #e27eae;
-    --secondary: #F5F5F5;
-    --contrast: rgb(255, 189, 8);
+    --secondary: #ffff;
+    --contrast: rgba(255,0,254,1);
 }
 
 
@@ -14,19 +24,22 @@ body {
     margin: 0;
     padding: 0;
     color: var(--secondary);
-  }
-    /* Thanks to https://stackoverflow.com/questions/37903824/how-can-i-make-infinite-flowing-background-with-only-css */  
+    
+    
+  }  /* Thanks to https://stackoverflow.com/questions/37903824/how-can-i-make-infinite-flowing-background-with-only-css */  
   #animatedBackground {
+    overflow: hidden;
+    position: relative;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background: url("bg.png");
+    background: url("bg.png"), radial-gradient(circle, rgba(45,228,12,1) 40%, rgba(255,0,254,1) 60%);;
     background-repeat: repeat;
     background-position: 0 0;
     background-size: auto 100%;
-  /*adjust s value for speed*/
+  
     animation: animatedBackground 500s linear infinite;
   }
   
@@ -34,7 +47,7 @@ body {
     from {
       background-position: 0 0;
     }
-  /*use negative width if you want it to flow right to left else and positive for left to right*/
+ 
     to {
       background-position: -10000px 10000px;
     }
@@ -45,7 +58,48 @@ body {
     margin: -0.01;
     padding: 0;
     box-sizing: 0;
-    font-family: Poppins;
+}
+
+.bottom_paper {
+  width: 100%;
+  height: 5vh;
+  padding: 20px;
+  position: absolute;
+  transform: rotate(-15deg);
+  bottom: 5%;
+}
+
+.bottom_paper:after{
+  content: "";
+  position: absolute;
+  height: 400%;
+  width: 140%;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/rip.svg) bottom;
+  filter: invert(100%);
+  transform: scaleY(-1);
+  background-size: 100%;
+  
+}
+
+.paper {
+  background: black;
+  width: 100%;
+  height: 5vh;
+  padding: 20px;
+  position: absolute;
+  transform: rotate(-15deg);
+  left: -25%;
+  top:-14%;
+}
+
+.paper:after{
+  content: "";
+  position: absolute;
+  height: 500%;
+  width: 140%;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/rip.svg) bottom;
+  filter: invert(100%);
+  background-size: 100%;
 }
 
 .main {
@@ -91,7 +145,9 @@ ul li::before {
 .hoverable:hover::after {
     background-color: var(--secondary);
 } */
-
+.hoverable {
+  font-size: 1rem;
+}
 .hoverable:hover, .hoverable:active{
     background: var(--secondary);
     margin-top: 1rem;
@@ -120,4 +176,12 @@ ul li a {
 
 ul li:hover a {
     color: var(--contrast);
+}
+
+.stretch {
+  font-family: StretchPro;
+}
+
+.neutro {
+  font-family: Neutro;
 }
