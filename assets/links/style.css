@@ -96,7 +96,7 @@ body {
   z-index: -1;
   top: 25%;
   left: 100px;
-  -webkit-text-stroke: 0.1px rgba(255, 255, 255, 0.486);
+  -webkit-text-stroke: 0.1px rgba(255, 255, 255, 0.75);
 }
 
 .header::after {
@@ -106,7 +106,7 @@ body {
   z-index: -1;
   top: 50%;
   left: 90px;
-  -webkit-text-stroke: 0.1px rgba(255, 255, 255, 0.15);
+  -webkit-text-stroke: 0.1px rgba(255, 255, 255, 0.50);
 }
 
 .paper {
