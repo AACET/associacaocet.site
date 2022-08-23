@@ -7,11 +7,11 @@
 
 @font-face {
   font-family: Neutro;
-  src: url('https://associacaocet.site/Neutro-ExtraBold.otf');
+  src: url('https://associacaocet.site/Freshman-POdx.ttf');
 }
 
 :root {
-    --primary: #000;
+    --primary: rgb(20, 20, 20);
     --primary_side: #c46e98;
     --primary_top: #e27eae;
     --secondary: #ffff;
@@ -84,6 +84,31 @@ body {
   
 }
 
+.header {
+  color: white;
+  position: relative;
+}
+
+.header::before {
+  color: rgba(255, 255, 255, 0);
+  content: 'AACET';
+  position: absolute;
+  z-index: -1;
+  top: 25%;
+  left: 100px;
+  -webkit-text-stroke: 0.1px rgba(255, 255, 255, 0.486);
+}
+
+.header::after {
+  color: rgba(255, 255, 255, 0);
+  content: 'AACET';
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 90px;
+  -webkit-text-stroke: 0.1px rgba(255, 255, 255, 0.15);
+}
+
 .paper {
   background: black;
   width: 100%;
@@ -118,6 +143,7 @@ ul {
 }
 
 ul li {
+  font-family: Poppins;
     position: relative;
     list-style: none;
     width: 300px;
@@ -179,10 +205,6 @@ ul li a {
 
 ul li:hover a {
     color: var(--contrast);
-}
-
-.stretch {
-  font-family: StretchPro;
 }
 
 .neutro {
