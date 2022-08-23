@@ -27,7 +27,7 @@ body {
     
     
   }  /* Thanks to https://stackoverflow.com/questions/37903824/how-can-i-make-infinite-flowing-background-with-only-css */  
-  #animatedBackground {
+  .animatedBackground {
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -53,7 +53,9 @@ body {
     }
   }
 
-
+.no_bg {
+  background: none;
+}
 * {
     margin: -0.01;
     padding: 0;
@@ -75,9 +77,10 @@ body {
   height: 400%;
   width: 140%;
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/rip.svg) bottom;
-  filter: invert(100%);
+  filter: invert(93.3%);
   transform: scaleY(-1);
   background-size: 100%;
+  left: -1%;
   
 }
 
@@ -88,8 +91,8 @@ body {
   padding: 20px;
   position: absolute;
   transform: rotate(-15deg);
-  left: -25%;
-  top:-14%;
+  left: -35%;
+  top: -15%;
 }
 
 .paper:after{
@@ -98,7 +101,7 @@ body {
   height: 500%;
   width: 140%;
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/rip.svg) bottom;
-  filter: invert(100%);
+  filter: invert(93.3%);
   background-size: 100%;
 }
 
@@ -120,7 +123,7 @@ ul li {
     width: 300px;
     background: var(--primary);
     padding: 25px;
-    font-size: 1.3rem;
+    font-size: 0.7rem;
     z-index: var(--index);
     transition: 0.5s;
 }
@@ -146,7 +149,7 @@ ul li::before {
     background-color: var(--secondary);
 } */
 .hoverable {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .hoverable:hover, .hoverable:active{
     background: var(--secondary);
