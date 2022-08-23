@@ -33,6 +33,7 @@ def fetch_files(assets_code, path, response):
             
         elif os.path.isfile(path):
             logger.info(f"Serving [{path}]")
-            response.send_file(path)         
+            response.send_file(path)    
+            return     
 
     response.not_found()
