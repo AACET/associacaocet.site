@@ -19,7 +19,7 @@ def links(event: EventCall, host, path, request: Request, response: Response, se
             response.not_found()
             event.stop()
 
-        case name if name.endswith(".otf"):
+        case name if name.endswith(".otf") or name.endswith(".ttf"):
             logging.info(f"Serving {name}")
             response.headers['Access-Control-Allow-Origin'] = '*'
             response.ok(page=os.path.join('assets', 'fonts', name))
