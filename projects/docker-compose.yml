@@ -20,3 +20,8 @@ services:
       default:
         ipv4_address: 10.1.0.12
 
+
+networks:
+  default:
+    external:
+      name: external-network
