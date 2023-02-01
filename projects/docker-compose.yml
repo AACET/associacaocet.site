@@ -9,3 +9,14 @@ services:
     networks:
       default:
         ipv4_address: 10.1.0.11
+
+  api:
+    container_name: "AAACET_Api"
+    build: 
+      context: './api/'
+      dockerfile: 'Dockerfile'
+    stop_signal: SIGKILL
+    networks:
+      default:
+        ipv4_address: 10.1.0.12
+
