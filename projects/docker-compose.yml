@@ -1,0 +1,11 @@
+services:
+  aaacet_nginx:
+    container_name: "AAACET_LoadBalancer"
+    image: "nginx:latest"
+    volumes: 
+      - ../volumes/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ../volumes/nginx/snippets/:/etc/nginx/snippets/
+      - ../volumes/static/:/var/www/static/
+    networks:
+      default:
+        ipv4_address: 10.1.0.11
