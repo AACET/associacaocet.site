@@ -1,0 +1,12 @@
+{
+    "status": 204,
+    "message": {
+        "title": "no content",
+        "body": "There's nothing in here (yet)"
+    },
+    "source": {
+        "domain": "jaobernardi.space",
+        "endpoint": "internal",
+        "server": "api"
+    }
+}

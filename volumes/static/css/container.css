@@ -1,0 +1,75 @@
+.flex {
+    display: flex;
+}
+
+.social {
+    vertical-align: middle;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    align-content: center;
+}
+
+.social a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.social a svg {
+    transition: all 1s!important;
+    display: block;
+    height: 0.8rem;
+    width: 0.8rem;
+}
+
+.social a svg:hover {
+    display: block;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+.instagram a svg:hover {
+    color: white!important;
+    border-radius: 1rem;
+    background-color: rgb(220, 16, 67)!important;
+}
+
+.twitter a svg:hover {
+    color: white!important;
+    border-radius: 1rem;
+    background-color: rgb(16, 128, 220)!important;
+}
+
+.github a svg:hover {
+    color: white!important;
+    border-radius: 1rem;
+    background-color: rgb(50, 50, 50)!important;
+}
+
+.hidden {
+    display: none;
+}
+
+.display-container {
+    padding-top: 25vh;
+    margin-left: 10vw;
+}
+
+.display-container h1, .display-container pre {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.display-container pre {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+        color: white;
+    }
+    body {
+        background-color: black;
+    }
+}

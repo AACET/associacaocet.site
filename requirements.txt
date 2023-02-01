@@ -1,5 +1,0 @@
-stackhttp
-pyding>=1.5.4
-aiosmtpd
-dkimpy
-BeautifulSoup4
