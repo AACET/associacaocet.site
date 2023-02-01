@@ -16,10 +16,24 @@ services:
       context: './api/'
       dockerfile: 'Dockerfile'
     stop_signal: SIGKILL
+    depends_on:
+      - db
     networks:
       default:
         ipv4_address: 10.1.0.12
 
+  db:
+    container_name: 'AAACET_DB'
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Avesso22@'
+      MYSQL_DATABASE: aaacet
+      MYSQL_USER: aaacet
+      MYSQL_PASSWORD: 'Avesso22@'
+    restart: on-failure
+    volumes:
+     - ../volumes/database/mariadb/:/var/lib/mysql
+     - ../volumes/database/init.sql:/docker-entrypoint-initdb.d/1.sql
 
 networks:
   default:
