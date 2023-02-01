@@ -1,9 +1,6 @@
-<center>
+<h1 align="center">Associação Acadêmica Atlética de Ciências Exatas e Tecnologias</h1>
+<p align="center">Universidade de Passo Fundo</p>
 
-# Associação Acadêmica Atlética de Ciências Exatas e Tecnologias
-## Universidade de Passo Fundo
+<img alt="website status" src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=lime&up_message=online&url=https%3A%2F%2Fassociacaocet.site" />
 
-![website status](https://img.shields.io/website?down_color=red&down_message=offline&up_color=lime&up_message=online&url=https%3A%2F%2Fassociacaocet.site)
-
-</center>
 
